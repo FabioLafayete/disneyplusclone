@@ -1,6 +1,6 @@
 dynamic avatar = [
   {
-    'name': 'Lafayete',
+    'name': 'Vader',
     'path': 'assets/Avatar/01.png'
   },
   {

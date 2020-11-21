@@ -1,4 +1,4 @@
-import 'package:disney_plus_clone/features/InitialScreen/initial_screen.dart';
+import 'package:disney_plus_clone/features/Home/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Disney + Clone',
-      home: InitialScreen(),
+      debugShowCheckedModeBanner: false,
+      home: Home(),
     );
   }
 }
