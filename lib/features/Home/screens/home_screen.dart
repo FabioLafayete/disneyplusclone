@@ -1,7 +1,10 @@
 import 'package:disney_plus_clone/features/Design/colors.dart';
 import 'package:disney_plus_clone/features/Home/components/brands.dart';
 import 'package:disney_plus_clone/features/Home/components/header_images.dart';
+import 'package:disney_plus_clone/features/Home/components/show_medias.dart';
 import 'package:flutter/material.dart';
+import 'package:disney_plus_clone/json/collections.dart';
+import 'package:disney_plus_clone/json/movies.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -29,7 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
       child: ListView(
         children: [
           HeaderImages(),
-          Brands()
+          Brands(),
+          ShowMedias(data: collections, title: 'Collections'),
+          ShowMedias(data: movies, title: 'Action and Adventure'),
+          ShowMedias(data: movies, title: 'Originals'),
+          ShowMedias(data: movies, title: 'Featured Movies'),
+          ShowMedias(data: movies, title: 'Trending'),
+          ShowMedias(data: movies, title: 'Hit Movies'),
         ],
       ),
     );

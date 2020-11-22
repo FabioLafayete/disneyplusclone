@@ -1,0 +1,17 @@
+var collections = [
+  'assets/Collections/starwars.jpeg',
+  'assets/Collections/spiderman.jpeg',
+  'assets/Collections/toystory.jpeg',
+  'assets/Collections/cars.jpeg',
+  'assets/Collections/disneychannel.jpeg',
+  'assets/Collections/disneyjunior.jpeg',
+  'assets/Collections/forky.jpeg',
+  'assets/Collections/frozen.jpeg',
+  'assets/Collections/mickeymouse.jpeg',
+  'assets/Collections/musicals.jpeg',
+  'assets/Collections/phineasandferb.jpeg',
+  'assets/Collections/princesses.jpeg',
+  'assets/Collections/simpsons.jpeg',
+  'assets/Collections/sparkshorts.jpeg',
+  'assets/Collections/throwsbacks.jpeg',
+];
