@@ -1,4 +1,4 @@
-var header = [
+List<dynamic> header = [
   {
     'path': 'assets/Header/mandalorian.jpeg',
     'name': 'assets/Header/mandalorian_name.png'

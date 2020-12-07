@@ -33,6 +33,7 @@ class _InitialScreenState extends State<InitialScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
+                stops: [0.3, 0.8],
                 colors: [lightBlue, darkBlue],
               )
           ),

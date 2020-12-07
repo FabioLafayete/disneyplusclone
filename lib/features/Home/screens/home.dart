@@ -1,5 +1,10 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:disney_plus_clone/bloc/avatar_bloc.dart';
 import 'package:disney_plus_clone/features/Design/colors.dart';
+import 'package:disney_plus_clone/features/Downloads/screens/downloads.dart';
 import 'package:disney_plus_clone/features/Home/components/avatar_selected.dart';
+import 'package:disney_plus_clone/features/Profile/screens/profile.dart';
+import 'package:disney_plus_clone/features/Search/screens/search.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -11,24 +16,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  PageController _pageController;
   int page = 0;
 
   Color lightBlue = DesignColors.lightBlue();
   Color darkBlue = DesignColors.darkBlue();
   Color dark = DesignColors.dark();
 
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _pageController.dispose();
-  }
+  List<Widget> widgets = [
+    HomeScreen(),
+    Search(),
+    Downloads(),
+    Profile()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,21 +35,8 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       backgroundColor: darkBlue,
-      appBar: _appBar(size),
-      body: PageView(
-        onPageChanged: (p){
-          setState(() {
-            page = p;
-          });
-        },
-        controller: _pageController,
-        children: <Widget>[
-          HomeScreen(),
-          Container(color: Colors.red),
-          Container(color: Colors.orange),
-          Container(color: Colors.green),
-        ],
-      ),
+      appBar: page == 0 || page == 2 ? _appBar(size) : null,
+      body: widgets[page],
       bottomNavigationBar: BottomNavigationBar(
           iconSize: size.width * 0.08,
           elevation: 0.0,
@@ -60,14 +46,11 @@ class _HomeState extends State<Home> {
           backgroundColor: darkBlue,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-
           currentIndex: page,
           onTap: (p){
-            _pageController.animateToPage(
-                p,
-                duration: Duration(milliseconds: 500),
-                curve: Curves.ease
-            );
+            setState(() {
+              page = p;
+            });
           },
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -83,11 +66,23 @@ class _HomeState extends State<Home> {
     return AppBar(
         backgroundColor: lightBlue,
         elevation: 0.0,
-        title: Image.asset(
+        centerTitle: page == 0 ? true : false,
+        title: page == 0 ?
+        Image.asset(
           'assets/logo.png',
           height: size.width * 0.25,
           width: size.width * 0.25,
         )
+            : page == 2 ?
+        Text(
+          'Downloads',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: size.width * 0.05
+          ),
+        )
+            :
+        Container()
     );
   }
 }

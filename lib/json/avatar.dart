@@ -1,4 +1,4 @@
-dynamic avatar = [
+List<dynamic> avatar = [
   {
     'name': 'Vader',
     'path': 'assets/Avatar/01.png'

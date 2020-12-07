@@ -1,4 +1,4 @@
-var movies = [
+List<String> movies = [
   'assets/Movie/10thingsihateabaoutyou.jpeg',
   'assets/Movie/aladdin.jpeg',
   'assets/Movie/alice.jpeg',

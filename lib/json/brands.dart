@@ -1,4 +1,4 @@
-var brands = [
+List<String> brands = [
   'assets/Brands/disney.png',
   'assets/Brands/pixar.png',
   'assets/Brands/marvel.png',

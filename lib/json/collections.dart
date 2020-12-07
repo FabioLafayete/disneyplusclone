@@ -1,4 +1,4 @@
-var collections = [
+List<String> collections = [
   'assets/Collections/starwars.jpeg',
   'assets/Collections/spiderman.jpeg',
   'assets/Collections/toystory.jpeg',
